@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Typo+Round&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz Aniversário!</title>
@@ -11,14 +10,57 @@
 <body>
     <div class="container">
         <h1>Feliz Aniversário!</h1>
+        
+        <!-- Áudio -->
         <audio controls autoplay>
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
             Seu navegador não suporta áudio.
         </audio>
+        
+        <!-- Imagem de Aniversário -->
         <div class="image-container">
-            <img src="images.jfif" alt="Imagem de Aniversário">
+            <img src="WhatsApp Image 2025-03-21 at 15.59.12.jpeg" alt="Imagem de Aniversário">
         </div>
-        <a href="index.html" class="button">Voltar para a Página Inicial</a>
+        
+        <!-- Mensagens de Carinho -->
+        <p class="birthday-message">
+            Que seu dia seja repleto de alegria, amor e momentos inesquecíveis. <br>
+            Parabéns e muitas felicidades!<br>
+            Continue sendo essa pessoa incrível, obrigada por tudo, te amo! 💜
+        </p>
+        
+        <!-- Galeria de Imagens -->
+        <div class="gallery">
+            <h2>Galeria de Momentos</h2>
+            <div class="image-grid">
+                <img src="img1.jpg" alt="Imagem 1">
+                <img src="img2.jpg" alt="Imagem 2">
+                <img src="img3.jpg" alt="Imagem 3">
+                <img src="img4.jpg" alt="Imagem 4">
+                <img src="img5.jpg" alt="Imagem 5">
+            </div>
+        </div>
+
+        <!-- Botão para voltar à Página Inicial -->
+        <div class="button-container">
+            <a href="index.html" class="button">Voltar para a Página Inicial</a>
+        </div>
     </div>
+
+    <!-- Div onde os balões aparecerão -->
+    <div id="baloes-container"></div>
+
+    <!-- Script para os balões -->
+    <script>
+        // Função para criar balões subindo automaticamente ao carregar a página
+        window.onload = function() {
+            for (let i = 0; i < 10; i++) { // Aumentando o número de balões para 10
+                let balao = document.createElement('div');
+                balao.classList.add('balao');
+                balao.style.left = `${Math.random() * 100}%`; // Distribuindo os balões aleatoriamente
+                document.getElementById('baloes-container').appendChild(balao);
+            }
+        };
+    </script>
 </body>
 </html>

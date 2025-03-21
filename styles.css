@@ -1,31 +1,61 @@
-/* Centralizando o conteúdo dentro do body */
-body {
-    body {
-        font-family: 'Dancing Script', cursive;
-    }
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "cursive"; /* Aplica a fonte Playfair Display */
-    text-align: center;
-}
-
 /* Container geral */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Ajuste da imagem */
+/* Imagem de Aniversário */
 .image-container img {
-    width: 80%; /* Ajuste o tamanho da imagem conforme necessário */
-    max-width: 800px; /* Limita a largura máxima para evitar que a imagem fique grande demais */
+    width: 100%;
+    max-width: 200px;
     height: auto;
     margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 20px 15px 20px rgba(248, 142, 230, 0.445);
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Efeito de zoom ao passar o mouse */
+.image-container img:hover {
+    transform: scale(1.1); /* Aumenta a imagem para 110% */
+}
+
+
+/* Mensagem de Aniversário */
+.birthday-message {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* Galeria de Imagens */
+.gallery {
+    margin-top: 20px;
+}
+
+.gallery h2 {
+    font-size: 1.5em;
+    color: #4a148c;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
 }
 
 /* Estilo do botão */
@@ -35,14 +65,61 @@ body {
 
 .button {
     text-decoration: none;
-    background-color: #f76be9; /* Cor do botão */
-    padding: 0px 100px;
-    color: rgb(0, 0, 0);
+    background-color: #ce93d8; /* Cor do botão ajustada */
+    padding: 10px 40px;
+    color: white;
     border-radius: 5px;
     font-size: 16px;
-    font-family: "Dancing Script"; /* Aplica a fonte Playfair Display também no botão */
+    font-family: 'Typo Round', sans-serif;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
-.button-text {
+.button:hover {
+    background-color: #ab47bc;
+}
+
+/* Estilo para os balões */
+#baloes-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.balao {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 80px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    animation: subir 5s ease-in forwards;
+}
+
+/* Animação dos balões */
+@keyframes subir {
+    0% {
+        bottom: 0;
+        opacity: 1;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+body {
+    background-color: #f3e5f5; /* Fundo lilás clarinho */
+    font-family: 'Typo Round', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     text-align: center;
+    color: #4a148c; /* Cor do texto */
 }
