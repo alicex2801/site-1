@@ -1,0 +1,65 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+.button {
+    display: block;
+    position: relative;
+    width: 550px;
+    height: 200px;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-image: url('https://via.placeholder.com/300x200'); /* Imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra todo o botão */
+    background-position: center;
+    color: white;
+    text-align: center;
+    line-height: 200px; /* Centraliza o texto dentro do botão */
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2;
+}
+
