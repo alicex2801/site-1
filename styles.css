@@ -23,7 +23,6 @@
     transform: scale(1.1); /* Aumenta a imagem para 110% */
 }
 
-
 /* Mensagem de Aniversário */
 .birthday-message {
     font-size: 1.2em;
@@ -84,6 +83,7 @@
 #baloes-container {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -93,33 +93,220 @@
 
 .balao {
     position: absolute;
-    bottom: 0;
-    width: 50px;
-    height: 80px;
-    background-color: #ff69b4;
-    border-radius: 50%;
-    animation: subir 5s ease-in forwards;
+    bottom: -100px;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.85;
+    animation: subir linear infinite;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Animação dos balões */
+/* Fio do balão */
+.balao::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: #555;
+}
+
+/* Animação dos balões subindo */
 @keyframes subir {
     0% {
-        bottom: 0;
-        opacity: 1;
+        transform: translateY(0);
+        opacity: 0.9;
     }
     100% {
-        bottom: 100%;
+        transform: translateY(-110vh);
         opacity: 0;
     }
 }
+
+/* Estilo exclusivo da primeira página */
+body.pagina-inicial {
+    background-color: #e1bee7; /* Lilás suave */
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: #6a1b9a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Emojis decorativos flutuando no fundo */
+.emoji-deco {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.6;
+    animation: flutuar 10s ease-in-out infinite alternate;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes flutuar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+/* Estilo da segunda página */
 body {
-    background-color: #f3e5f5; /* Fundo lilás clarinho */
+    background-color: #f3e5f5; /* Cor suave lilás */
     font-family: 'Typo Round', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
-    color: #4a148c; /* Cor do texto */
+    color: #6a1b9a;
+}
+
+/* Container central */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 2.5em;
+    color: #9c27b0;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Áudio */
+audio {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem de Aniversário */
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensagem de Aniversário */
+.birthday-message {
+    font-size: 1.3em;
+    margin-top: 20px;
+    color: #4a148c;
+}
+
+/* Galeria de Imagens */
+.gallery {
+    margin-top: 40px;
+}
+
+.gallery h2 {
+    font-size: 2em;
+    color: #9c27b0;
+    margin-bottom: 20px;
+}
+
+/* Estilo da grade de imagens */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do botão */
+.button-container {
+    margin-top: 30px;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #ba68c8;
+    padding: 12px 40px;
+    color: white;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: 'Typo Round', sans-serif;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #9c27b0;
+}
+
+/* Estilo para os balões */
+#baloes-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.balao {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0.85;
+    animation: subir linear infinite;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.balao::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: #555;
+}
+
+/* Animação dos balões subindo */
+@keyframes subir {
+    0% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
 }
