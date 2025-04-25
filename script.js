@@ -1,4 +1,3 @@
-// Parte dos balões
 window.onload = function () {
     const cores = ['#ff4d4d', '#4da6ff', '#66ff66', '#ffd11a', '#ff66cc', '#a366ff'];
     const container = document.getElementById('baloes-container');
@@ -7,9 +6,10 @@ window.onload = function () {
         let balao = document.createElement('div');
         balao.classList.add('balao');
 
+        // Estilos variáveis
         let cor = cores[Math.floor(Math.random() * cores.length)];
-        let tamanho = 40 + Math.random() * 40;
-        let duracao = 5 + Math.random() * 5;
+        let tamanho = 40 + Math.random() * 40; // 40-80px
+        let duracao = 5 + Math.random() * 5; // 5-10s
 
         balao.style.backgroundColor = cor;
         balao.style.left = `${Math.random() * 100}%`;
@@ -43,20 +43,13 @@ function verificarRespostas() {
     const animacao = document.getElementById("animacaoFinal");
 
     if (acertos === 3) {
-        document.body.style.backgroundColor = "#b2f2bb";
+        document.body.style.backgroundColor = "#d4fdd4"; // verde claro
         resultado.innerHTML = "VOCÊ ACERTOU TUDO! 🥹💖";
-        if (animacao) animacao.style.display = "block";
+        animacao.style.display = "block"; // mostra imagem
     } else {
-        document.body.style.backgroundColor = "#ffcccc";
+        document.body.style.backgroundColor = "#ffe5e5"; // vermelho claro
         resultado.innerHTML = `Você acertou ${acertos} de 3. 😬 Tenta de novo!`;
-        if (animacao) animacao.style.display = "none";
+        animacao.style.display = "none"; // esconde imagem
     }
 }
 
-// Conecta o botão com a função do quiz
-document.addEventListener("DOMContentLoaded", function () {
-    const botao = document.querySelector("#quizForm button");
-    if (botao) {
-        botao.addEventListener("click", verificarRespostas);
-    }
-});

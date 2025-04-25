@@ -310,3 +310,65 @@ audio {
         opacity: 0;
     }
 }
+
+.animacao-final {
+    display: none; /* Começa invisível */
+    text-align: center;
+    margin-top: 30px;
+}
+
+.imagem-coracao {
+    width: 300px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-item p {
+    margin-top: 8px;
+    font-size: 1em;
+    color: #6a1b9a;
+}
+
+/* 🌸 Container da música */
+.music-player {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 🌸 Botão em forma de flor */
+.flower-button {
+    position: absolute;
+    z-index: 2;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.flower-button:hover {
+    transform: scale(1.1);
+}
+
+/* Player de áudio (opcionalmente escondido se quiser só o botão) */
+.music-player audio {
+    width: 250px;
+    opacity: 0.8;
+}
+
+
