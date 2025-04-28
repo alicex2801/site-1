@@ -20,7 +20,7 @@
 
 /* Efeito de zoom ao passar o mouse */
 .image-container img:hover {
-    transform: scale(1.1); /* Aumenta a imagem para 110% */
+    transform: scale(1.1); /* Aumenta a imagem para 105% */
 }
 
 /* Mensagem de Aniversário */
@@ -69,7 +69,7 @@
     color: white;
     border-radius: 5px;
     font-size: 16px;
-    font-family: 'Typo Round', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Alterado para a fonte Roboto */
     transition: background-color 0.3s ease;
     display: inline-block;
     text-align: center;
@@ -161,7 +161,7 @@ body.pagina-inicial {
 /* Estilo da segunda página */
 body {
     background-color: #f3e5f5; /* Cor suave lilás */
-    font-family: 'Typo Round', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Atualizado para Roboto */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,10 +183,11 @@ body {
 
 /* Estilo do título */
 h1 {
-    font-size: 2.5em;
-    color: #9c27b0;
+    font-family: 'Dancing Script', cursive; /* Fonte exclusiva para o título */
+    font-size: 3rem; /* Tamanho aumentado do título */
+    color: #FF69B4; /* Cor rosa */
     margin-bottom: 20px;
-    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Efeito de sombra */
 }
 
 /* Áudio */
@@ -257,7 +258,7 @@ audio {
     color: white;
     border-radius: 25px;
     font-size: 18px;
-    font-family: 'Typo Round', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte alterada para Roboto */
     transition: background-color 0.3s ease;
     display: inline-block;
     text-align: center;
@@ -371,4 +372,56 @@ audio {
     opacity: 0.8;
 }
 
+.textinho-fofo {
+    border: 2px solid #ffd6e7; /* rosa bem clarinho */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px auto;
+    width: 80%;
+    background-color: #fff0f6; /* fundo rosinha claro */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra suave */
+}
 
+.heart-animation {
+    font-size: 50px;
+    animation: pulse 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+/* Animação batendo e se formando */
+@keyframes pulse {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .image-container img {
+        max-width: 100%;
+    }
+    .button {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
