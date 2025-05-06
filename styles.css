@@ -425,3 +425,12 @@ audio {
         font-size: 2em;
     }
 }
+
+.quiz-container {
+    border: 3px dashed #ba68c8; /* Borda roxa pontilhada */
+    padding: 30px;
+    margin: 50px 0;
+    border-radius: 15px;
+    background-color: #fff0f6; /* Fundo levemente rosa */
+    box-shadow: 0 5px 15px rgba(186, 104, 200, 0.3); /* Sombra suave */
+}
